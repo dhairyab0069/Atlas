@@ -29,6 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/GymJournalTitle" />
 
     <RadioGroup
+        android:id="@+id/exradiogroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -123,4 +124,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/ExJournalHome"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="48dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:foreground="@drawable/_5766"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
