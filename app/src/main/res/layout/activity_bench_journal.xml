@@ -7,7 +7,7 @@
     tools:context=".benchJournal">
 
     <TextView
-        android:id="@+id/benchJournalweight"
+        android:id="@+id/BenchJournalweight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -54,10 +54,10 @@
         android:layout_marginTop="40dp"
         android:text="Reps per set:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/benchJournalweight" />
+        app:layout_constraintTop_toBottomOf="@+id/BenchJournalweight" />
 
     <TextView
-        android:id="@+id/gender"
+        android:id="@+id/BenchMax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -96,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
     <Button
-        android:id="@+id/bjhome"
+        android:id="@+id/Benchhome"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="48dp"
         android:layout_height="52dp"
@@ -120,7 +120,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageViewSquat"
         android:layout_width="233dp"
         android:layout_height="189dp"
         android:layout_marginTop="32dp"
@@ -128,6 +128,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bj"
         app:srcCompat="@drawable/bench" />
+
+    <Button
+        android:id="@+id/Benchback"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="48dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:foreground="?attr/actionModeCloseDrawable"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 
 

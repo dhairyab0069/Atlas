@@ -24,7 +24,7 @@ public class GymJournal extends AppCompatActivity {
 
         rgroup = (RadioGroup) findViewById(R.id.exradiogroup);
         submit = (Button) findViewById(R.id.SelEx) ;
-        home = (Button) findViewById(R.id.bjhome) ;
+        home = (Button) findViewById(R.id.Squathome) ;
 
 
 submit.setOnClickListener(new View.OnClickListener() {

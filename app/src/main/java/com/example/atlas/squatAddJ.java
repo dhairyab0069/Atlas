@@ -6,41 +6,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class benchAddJ extends AppCompatActivity {
+public class squatAddJ extends AppCompatActivity {
+    TextView squatsets;
+    TextView squatreps;
+    TextView squatmax;
 
-    Button back, home, submit ;
-    EditText bmax ;
-    EditText bsets ;
-    EditText breps;
+    Button submit, home,back;
 
-    private static final String file="benchjournal.txt";
-
-    //static ArrayList<String> benchdata = new ArrayList<String>();
+    private static final String file="squatjournal.txt";
 
     public static String sets, reps, max;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bench_add_j);
-
-        bmax = (EditText) findViewById(R.id.bjmax);
-        bsets = (EditText) findViewById(R.id.bjSets);
-        breps = (EditText) findViewById(R.id.bjreps);
-
-        submit = (Button) findViewById(R.id.bsubmit) ;
-        back = (Button) findViewById(R.id.bjback) ;
-        home = (Button) findViewById(R.id.Benchhome) ;
+        setContentView(R.layout.activity_squat_add_j);
 
 
+        squatsets = (TextView) findViewById(R.id.sqSets);
+        squatreps = (TextView) findViewById(R.id.sqreps);
+        squatmax = (TextView) findViewById(R.id.sqmax);
 
+        submit = (Button) findViewById(R.id.sqsubmit) ;
+        home = (Button) findViewById(R.id.sqhome);
+        back = (Button) findViewById(R.id.sqback);
 
         submit.setOnClickListener(new View.OnClickListener()
 
@@ -48,9 +44,9 @@ public class benchAddJ extends AppCompatActivity {
             @Override
             public void onClick (View v) {
 
-                max = bmax.getText().toString();
-                sets = bsets.getText().toString();
-                reps = breps.getText().toString();
+                max = squatmax.getText().toString();
+                sets = squatsets.getText().toString();
+                reps = squatreps.getText().toString();
 
                 int maxc, setsc, repsc;
                 maxc = max.length();
@@ -60,7 +56,7 @@ public class benchAddJ extends AppCompatActivity {
 
                 if (maxc == 0 || setsc == 0 || repsc == 0) {
 
-                    Toast.makeText(benchAddJ.this, "Field(s) missing", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(squatAddJ.this, "Field(s) missing", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -99,14 +95,14 @@ public class benchAddJ extends AppCompatActivity {
 
 
     }
-   // public void writearr(String sets, String reps, String max){
+    // public void writearr(String sets, String reps, String max){
 
-      //  String txt =sets+","+reps+","+max+"\n";
-        //benchdata.add(txt);
+    //  String txt =sets+","+reps+","+max+"\n";
+    //benchdata.add(txt);
 
 
 
-   // }
+    // }
 
     public void write(String sets, String reps, String max){
 
@@ -118,7 +114,7 @@ public class benchAddJ extends AppCompatActivity {
         try {
             fos = openFileOutput(file, MODE_APPEND);
             fos.write(txt.getBytes());
-            Toast.makeText(benchAddJ.this, "Added!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(squatAddJ.this, "Added!", Toast.LENGTH_SHORT).show();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -137,7 +133,7 @@ public class benchAddJ extends AppCompatActivity {
 
         }
 
-       // finish();
+        // finish();
 
     }
 
@@ -153,25 +149,19 @@ public class benchAddJ extends AppCompatActivity {
 
     public void back(){ //creates new intent
 
-        Intent intent = new Intent(this,benchJournal.class);
+        Intent intent = new Intent(this,squatJournal.class);
         startActivity(intent);
 
 
 
     }
 
-    public void Bjournal(){ //creates new intent
+    public void Sjournal(){ //creates new intent
 
-        Intent intent = new Intent(this,benchJournal.class);
+        Intent intent = new Intent(this,squatJournal.class);
         startActivity(intent);
 
 
 
     }
-
-
-
-
-
-
 }

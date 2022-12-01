@@ -24,7 +24,7 @@ public class benchJournal extends AppCompatActivity {
     TextView benchreps;
     TextView benchmax;
 
-    Button next, prev, add, home;
+    Button next, prev, add, home,back;
 
     private static final String file="benchjournal.txt";
 
@@ -45,7 +45,8 @@ public class benchJournal extends AppCompatActivity {
         next = (Button) findViewById(R.id.Benchnext);
         prev = (Button) findViewById(R.id.Benchprev);
         add = (Button) findViewById(R.id.Benchadd);
-        home = (Button) findViewById(R.id.bjhome);
+        home = (Button) findViewById(R.id.Benchhome);
+        back = (Button) findViewById(R.id.Benchback);
 
         read();
         settext();
@@ -59,6 +60,12 @@ public class benchJournal extends AppCompatActivity {
 
   //      }
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                journal();
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
