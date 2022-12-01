@@ -13,30 +13,28 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class squatAddJ extends AppCompatActivity {
-    TextView squatsets;
-    TextView squatreps;
-    TextView squatmax;
+public class deadliftAddJ extends AppCompatActivity {
+
+    TextView deadliftsets;
+    TextView deadliftreps;
+    TextView deadliftmax;
 
     Button submit, home,back;
 
-    private static final String file="squatjournal.txt";
+    private static final String file="deadliftjournal.txt";
 
     public static String sets, reps, max;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_squat_add_j);
+        setContentView(R.layout.activity_deadlift_add_j);
+        deadliftsets = (TextView) findViewById(R.id.deSets);
+        deadliftreps = (TextView) findViewById(R.id.dereps);
+        deadliftmax = (TextView) findViewById(R.id.demax);
 
-
-        squatsets = (TextView) findViewById(R.id.sqSets);
-        squatreps = (TextView) findViewById(R.id.sqreps);
-        squatmax = (TextView) findViewById(R.id.sqmax);
-
-        submit = (Button) findViewById(R.id.sqsubmit) ;
-        home = (Button) findViewById(R.id.sqhome);
-        back = (Button) findViewById(R.id.sqback);
+        submit = (Button) findViewById(R.id.desubmit) ;
+        home = (Button) findViewById(R.id.dehome);
+        back = (Button) findViewById(R.id.deback);
 
         submit.setOnClickListener(new View.OnClickListener()
 
@@ -44,9 +42,9 @@ public class squatAddJ extends AppCompatActivity {
             @Override
             public void onClick (View v) {
 
-                max = squatmax.getText().toString();
-                sets = squatsets.getText().toString();
-                reps = squatreps.getText().toString();
+                max = deadliftmax.getText().toString();
+                sets = deadliftsets.getText().toString();
+                reps = deadliftreps.getText().toString();
 
                 int maxc, setsc, repsc;
                 maxc = max.length();
@@ -56,7 +54,7 @@ public class squatAddJ extends AppCompatActivity {
 
                 if (maxc == 0 || setsc == 0 || repsc == 0) {
 
-                    Toast.makeText(squatAddJ.this, "Field(s) missing", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(deadliftAddJ.this, "Field(s) missing", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -114,7 +112,7 @@ public class squatAddJ extends AppCompatActivity {
         try {
             fos = openFileOutput(file, MODE_APPEND);
             fos.write(txt.getBytes());
-            Toast.makeText(squatAddJ.this, "Added!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(deadliftAddJ.this, "Added!", Toast.LENGTH_SHORT).show();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -149,7 +147,7 @@ public class squatAddJ extends AppCompatActivity {
 
     public void back(){ //creates new intent
 
-        Intent intent = new Intent(this,squatJournal.class);
+        Intent intent = new Intent(this,deadliftJournal.class);
         startActivity(intent);
 
 

@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".squatAddJ">
+    tools:context=".deadliftAddJ">
 
     <TextView
-        android:id="@+id/SquatJournalweight"
+        android:id="@+id/deadliftJournalweight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="370dp"
         android:layout_marginEnd="32dp"
         android:text="Max weight:"
-        app:layout_constraintEnd_toStartOf="@+id/sqmax"
+        app:layout_constraintEnd_toStartOf="@+id/demax"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/sqmax"
+        android:id="@+id/demax"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="350dp"
@@ -32,19 +31,19 @@
 
 
     <TextView
-        android:id="@+id/SquatJournalSets"
+        android:id="@+id/deadliftJournalSets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="32dp"
         android:text="Sets:"
-        app:layout_constraintEnd_toStartOf="@+id/sqSets"
+        app:layout_constraintEnd_toStartOf="@+id/deSets"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SquatJournalweight" />
+        app:layout_constraintTop_toBottomOf="@+id/deadliftJournalweight" />
 
     <EditText
-        android:id="@+id/sqSets"
+        android:id="@+id/deSets"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="50dp"
@@ -52,22 +51,22 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sqmax" />
+        app:layout_constraintTop_toBottomOf="@+id/demax" />
 
     <TextView
-        android:id="@+id/SquatJournalReps"
+        android:id="@+id/deadliftJournalReps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="32dp"
         android:text="Reps:"
-        app:layout_constraintEnd_toStartOf="@+id/sqreps"
+        app:layout_constraintEnd_toStartOf="@+id/dereps"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SquatJournalSets" />
+        app:layout_constraintTop_toBottomOf="@+id/deadliftJournalSets" />
 
     <EditText
-        android:id="@+id/sqreps"
+        android:id="@+id/dereps"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="50dp"
@@ -75,10 +74,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sqSets" />
+        app:layout_constraintTop_toBottomOf="@+id/deSets" />
 
     <Button
-        android:id="@+id/sqsubmit"
+        android:id="@+id/desubmit"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -88,11 +87,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/sqtitle"
+        android:id="@+id/detitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Add to squat journal"
+        android:text="Add to deadlift journal"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +99,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/sqhome"
+        android:id="@+id/dehome"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="48dp"
         android:layout_height="52dp"
@@ -112,7 +111,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/sqback"
+        android:id="@+id/deback"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="48dp"
         android:layout_height="52dp"
@@ -124,18 +123,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageViewSquat"
+        android:id="@+id/imageViewdeadlift"
         android:layout_width="233dp"
         android:layout_height="189dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sqtitle"
-        app:srcCompat="@drawable/squat" />
+        app:layout_constraintTop_toBottomOf="@+id/detitle"
+        app:srcCompat="@drawable/deadlift" />
 
 
 
-
-
-
-  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
