@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -25,7 +24,7 @@ public class GymJournal extends AppCompatActivity {
 
         rgroup = (RadioGroup) findViewById(R.id.exradiogroup);
         submit = (Button) findViewById(R.id.SelEx) ;
-        home = (Button) findViewById(R.id.ExJournalHome) ;
+        home = (Button) findViewById(R.id.bjhome) ;
 
 
 submit.setOnClickListener(new View.OnClickListener() {
