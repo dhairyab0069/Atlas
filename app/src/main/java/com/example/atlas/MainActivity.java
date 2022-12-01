@@ -10,6 +10,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button journal ;
 
 
     @Override
@@ -17,15 +18,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        journal = (Button) findViewById(R.id.journal) ;
+
+
+        journal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                journal();
+            }
+        });
+
+
+    }
+
+
+    public void journal(){ //creates new intent
+
+        Intent intent = new Intent(this,GymJournal.class);
+        startActivity(intent);
 
 
 
-
+    }
 
 
 
 }
 
 
-}
+
   
