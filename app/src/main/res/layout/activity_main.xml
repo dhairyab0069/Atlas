@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/friends3"
         android:layout_width="216dp"
         android:layout_height="31dp"
         android:text="TextView"
@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.291" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/friends4"
         android:layout_width="216dp"
         android:layout_height="31dp"
         android:text="TextView"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.344" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/friends2"
         android:layout_width="216dp"
         android:layout_height="31dp"
         android:text="TextView"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.231" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/friends1"
         android:layout_width="216dp"
         android:layout_height="31dp"
         android:text="TextView"
@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.179" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/gym4"
         android:layout_width="123dp"
         android:layout_height="30dp"
         android:text="YMCA:"
@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.345" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/gym3"
         android:layout_width="123dp"
         android:layout_height="30dp"
         android:text="World's Gym: "
@@ -91,10 +91,10 @@
         app:layout_constraintVertical_bias="0.291" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/metricsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Metrics"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.981"
@@ -103,25 +103,25 @@
         app:layout_constraintVertical_bias="0.995" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/journalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Journal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.662"
+        app:layout_constraintHorizontal_bias="0.635"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.995" />
 
     <Button
-        android:id="@+id/leaderB"
+        android:id="@+id/leaderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Leader"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintHorizontal_bias="0.310"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.995" />
@@ -164,28 +164,28 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
-        android:id="@+id/profileButton4"
+        android:id="@+id/friendsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Friends"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
-        android:id="@+id/profileButton3"
-        android:layout_width="110dp"
-        android:layout_height="39dp"
+        android:id="@+id/checkIn"
+        android:layout_width="131dp"
+        android:layout_height="42dp"
         android:text="Check In"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.402" />
 
     <TextView
         android:id="@+id/seeWho"
@@ -200,7 +200,7 @@
         app:layout_constraintVertical_bias="0.126" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/gym2"
         android:layout_width="123dp"
         android:layout_height="30dp"
         android:text="Anytime Fitness:"
@@ -213,8 +213,8 @@
 
     <Spinner
         android:id="@+id/selectGym"
-        android:layout_width="141dp"
-        android:layout_height="28dp"
+        android:layout_width="145dp"
+        android:layout_height="41dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.025"
