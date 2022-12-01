@@ -3,7 +3,7 @@
     <string-array name="gym_list">
         <item>UBCO Gym</item>
         <item>Anytime Fitness</item>
-        <item>Worlds Gym</item>
+        <item>World Gym</item>
         <item>YMCA</item>
     </string-array>
 </resources>
