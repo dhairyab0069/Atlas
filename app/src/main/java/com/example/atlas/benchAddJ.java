@@ -23,7 +23,7 @@ public class benchAddJ extends AppCompatActivity {
 
     private static final String file="benchjournal.txt";
 
-    static ArrayList<String> benchdata = new ArrayList<String>();
+    //static ArrayList<String> benchdata = new ArrayList<String>();
 
     public static String sets, reps, max;
 
@@ -68,8 +68,8 @@ public class benchAddJ extends AppCompatActivity {
                 else{
                     //writearr(sets,reps,max);
                     write(sets,reps,max);
-                    home();
-                    finish();
+                    //home();
+                    //finish();
                 }
 
 
@@ -85,7 +85,7 @@ public class benchAddJ extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 home();
-                finish();
+                //finish();
             }
         });
 
@@ -94,20 +94,20 @@ public class benchAddJ extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 back();
-                finish();
+                //finish();
             }
         });
 
 
     }
-    public void writearr(String sets, String reps, String max){
+   // public void writearr(String sets, String reps, String max){
 
-        String txt =sets+","+reps+","+max+"\n";
-        benchdata.add(txt);
+      //  String txt =sets+","+reps+","+max+"\n";
+        //benchdata.add(txt);
 
 
 
-    }
+   // }
 
     public void write(String sets, String reps, String max){
 
@@ -119,8 +119,7 @@ public class benchAddJ extends AppCompatActivity {
         try {
             fos = openFileOutput(file, MODE_APPEND);
             fos.write(txt.getBytes());
-
-
+            Toast.makeText(benchAddJ.this, "Added!", Toast.LENGTH_SHORT).show();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -139,7 +138,7 @@ public class benchAddJ extends AppCompatActivity {
 
         }
 
-        finish();
+       // finish();
 
     }
 
@@ -147,7 +146,7 @@ public class benchAddJ extends AppCompatActivity {
 
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
-        finish();
+
 
 
     }
@@ -157,7 +156,7 @@ public class benchAddJ extends AppCompatActivity {
 
         Intent intent = new Intent(this,benchJournal.class);
         startActivity(intent);
-        finish();
+
 
 
     }

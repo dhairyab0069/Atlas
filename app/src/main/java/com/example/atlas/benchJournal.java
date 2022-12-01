@@ -1,6 +1,6 @@
 package com.example.atlas;
 
-import static com.example.atlas.benchAddJ.benchdata;
+//import static com.example.atlas.benchAddJ.benchdata;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,11 +26,11 @@ public class benchJournal extends AppCompatActivity {
 
     Button next, prev, add, home;
 
-    private static final String file="/data/data/com.example.atlas/files/benchjournal.txt";
+    private static final String file="benchjournal.txt";
 
     public static String sets, reps, max;
     public static int  count= 0;
-    public static ArrayList<String> benchtxt = new ArrayList<String>();
+    public static ArrayList<String> benchtxt = new ArrayList<>();
 
 
     @Override
@@ -87,9 +87,10 @@ public class benchJournal extends AppCompatActivity {
 
                 }
 
-                count++;
-                settext();
-
+                else {
+                    count++;
+                    settext();
+                }
             }
         });
 
@@ -100,8 +101,13 @@ public class benchJournal extends AppCompatActivity {
 
                 if (count == 0) {
 
-                    count = benchdata.size()-1;
-                    settext();
+                    if(benchtxt.size() == 0){
+
+                        settext();
+                    }
+                    else{
+                    count = benchtxt.size()-1;
+                    settext();}
                 }
 
                 else{
@@ -172,21 +178,22 @@ public class benchJournal extends AppCompatActivity {
 
                 if(benchtxt.isEmpty()){
 
-
-                    Toast.makeText(benchJournal.this, "Array is empty", Toast.LENGTH_SHORT).show();
+                    int s = benchtxt.size();
+                    String a = "Array is empty"+s;
+                    Toast.makeText(benchJournal.this, a, Toast.LENGTH_SHORT).show();
 
                 }
             }
 
         }catch (FileNotFoundException e){
             Toast.makeText(benchJournal.this, "File not found", Toast.LENGTH_SHORT).show();
-            finish();
+            //finish();
             journal();
             e.printStackTrace();
         }
         catch (IOException e){
             Toast.makeText(benchJournal.this, "IO exception", Toast.LENGTH_SHORT).show();
-            finish();
+            //finish();
             journal();
             e.printStackTrace();
         }
