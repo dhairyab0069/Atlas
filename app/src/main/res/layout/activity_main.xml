@@ -121,7 +121,7 @@
         android:text="Journal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.635" />
 
     <Button
         android:id="@+id/leaderButton"
@@ -130,7 +130,7 @@
         android:text="Leader"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.310"
+        app:layout_constraintHorizontal_bias="0.310" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
