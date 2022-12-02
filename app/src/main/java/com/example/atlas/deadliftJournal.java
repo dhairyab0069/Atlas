@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -193,8 +194,10 @@ public class deadliftJournal extends AppCompatActivity {
 
         }catch (FileNotFoundException e){
             Toast.makeText(deadliftJournal.this, "File not found", Toast.LENGTH_SHORT).show();
+            write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
+            current();
             //finish();
-            journal();
+            //journal();
             e.printStackTrace();
         }
         catch (IOException e){
@@ -229,6 +232,49 @@ public class deadliftJournal extends AppCompatActivity {
         Intent intent = new Intent(this,deadliftAddJ.class);
         startActivity(intent);
 
+
+    }
+
+    public void current(){ //creates new intent
+
+        Intent intent = new Intent(this,benchJournal.class);
+        startActivity(intent);
+    }
+
+
+
+
+
+    public void write(String sets, String reps, String max){
+
+
+
+        String txt =sets+","+reps+","+max+"\n";
+        FileOutputStream fos = null;
+
+        try {
+            fos = openFileOutput(file, MODE_APPEND);
+            fos.write(txt.getBytes());
+            Toast.makeText(deadliftJournal.this, "Added!", Toast.LENGTH_SHORT).show();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+
+            if(fos!=null){
+
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+
+        // finish();
 
     }
 }
