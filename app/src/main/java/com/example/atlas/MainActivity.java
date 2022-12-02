@@ -189,8 +189,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        leader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Leaderboard = new Intent(view.getContext(),LeaderBoards.class);
+                startActivity(Leaderboard);
+            }
+        });
+
 
     }
+
 
 
     public void journal(){ //creates new intent
