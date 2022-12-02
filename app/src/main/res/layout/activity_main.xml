@@ -115,16 +115,13 @@
         app:layout_constraintVertical_bias="0.995" />
 
     <Button
-        android:id="@+id/journalButton"
+        android:id="@+id/journal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Journal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
+        app:layout_constraintHorizontal_bias="0.635" />
 
     <Button
         android:id="@+id/leaderButton"
@@ -133,10 +130,7 @@
         android:text="Leader"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.310"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
+        app:layout_constraintHorizontal_bias="0.310" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
@@ -232,6 +226,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.402" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

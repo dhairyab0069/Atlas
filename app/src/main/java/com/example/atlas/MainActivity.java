@@ -2,8 +2,10 @@ package com.example.atlas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> gym4People = new ArrayList<String>();
 
     String gymSelection;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         checkIn = findViewById(R.id.checkIn);
         main = findViewById(R.id.main);
         leader = findViewById(R.id.leaderButton);
-        journal = findViewById(R.id.journalButton);
+        journal = (Button) findViewById(R.id.journal) ;
         metrics = findViewById(R.id.metricsButton);
         checkOut = findViewById(R.id.checkOut);
 
@@ -177,5 +180,32 @@ public class MainActivity extends AppCompatActivity {
                 checkIn.setEnabled(true);
             }
         });
+
+
+        journal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                journal();
+            }
+        });
+
+
     }
+
+
+    public void journal(){ //creates new intent
+
+        Intent intent = new Intent(this,GymJournal.class);
+        startActivity(intent);
+
+
+
+    }
+
+
+
 }
+
+
+
+  
