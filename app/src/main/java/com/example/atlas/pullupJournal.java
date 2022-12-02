@@ -3,6 +3,7 @@ package com.example.atlas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -60,6 +61,7 @@ public class pullupJournal extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 journal();
             }
         });
@@ -75,6 +77,7 @@ public class pullupJournal extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 home();
             }
         });
@@ -183,19 +186,35 @@ public class pullupJournal extends AppCompatActivity {
 
                 if(pulluptxt.isEmpty()){
 
-                    int s = pulluptxt.size();
-                    String a = "Array is empty"+s;
-                    Toast.makeText(pullupJournal.this, a, Toast.LENGTH_SHORT).show();
+
+                    pulluptxt.add("XXXXXXXX,XXXXXXXX,XXXXXXXX");
+
+                    //int s = pulluptxt.size();
+                    //String a = "Array is empty"+s;
+                    //Toast.makeText(pullupJournal.this, a, Toast.LENGTH_SHORT).show();
+
+                }else {
+
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        //pulluptxt.removeIf(p -> p.equals(" , , "));
+                        pulluptxt.removeIf(p -> p.equals("XXXXXXXX,XXXXXXXX,XXXXXXXX"));
+                    }
+
+
+
 
                 }
             }
 
         }catch (FileNotFoundException e){
-            Toast.makeText(pullupJournal.this, "File not found", Toast.LENGTH_SHORT).show();
-            write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
-            current();
+            Toast.makeText(pullupJournal.this, "File not found, initialising file", Toast.LENGTH_SHORT).show();
+            //write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
+            //write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
+            finish();
+            //current();
             //finish();
-            //journal();
+            journal();
             e.printStackTrace();
         }
         catch (IOException e){
@@ -252,7 +271,6 @@ public class pullupJournal extends AppCompatActivity {
         try {
             fos = openFileOutput(file, MODE_APPEND);
             fos.write(txt.getBytes());
-            Toast.makeText(pullupJournal.this, "Added!", Toast.LENGTH_SHORT).show();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

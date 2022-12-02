@@ -5,6 +5,7 @@ package com.example.atlas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,6 +65,7 @@ public class benchJournal extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 journal();
             }
         });
@@ -78,6 +80,7 @@ public class benchJournal extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 home();
             }
         });
@@ -186,20 +189,31 @@ public class benchJournal extends AppCompatActivity {
 
                 if(benchtxt.isEmpty()){
 
-                    int s = benchtxt.size();
-                    String a = "Array is empty"+s;
-                    Toast.makeText(benchJournal.this, a, Toast.LENGTH_SHORT).show();
+                    benchtxt.add("XXXXXXXX,XXXXXXXX,XXXXXXXX");
+                    //int s = benchtxt.size();
+                    //String a = "Array is empty"+s;
+                    //Toast.makeText(benchJournal.this, a, Toast.LENGTH_SHORT).show();
+
+                }else {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        //benchtxt.removeIf(o -> o.equals(" , , "));
+                        benchtxt.removeIf(o -> o.equals("XXXXXXXX,XXXXXXXX,XXXXXXXX"));
+                    }
+
 
                 }
             }
 
         }catch (FileNotFoundException e){
-            Toast.makeText(benchJournal.this, "File not found", Toast.LENGTH_SHORT).show();
-            write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
-            current();
+            Toast.makeText(benchJournal.this, "File not found, initialising file", Toast.LENGTH_SHORT).show();
+            //write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
+           // write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
+            finish();
+            //current();
             //finish();
-            //journal();
-            e.printStackTrace();
+            journal();
+            //e.printStackTrace();
         }
         catch (IOException e){
             Toast.makeText(benchJournal.this, "IO exception", Toast.LENGTH_SHORT).show();
@@ -255,7 +269,7 @@ public class benchJournal extends AppCompatActivity {
         try {
             fos = openFileOutput(file, MODE_APPEND);
             fos.write(txt.getBytes());
-            Toast.makeText(benchJournal.this, "Added!", Toast.LENGTH_SHORT).show();
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

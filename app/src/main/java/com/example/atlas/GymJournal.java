@@ -10,6 +10,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class GymJournal extends AppCompatActivity {
 
     Button submit, home  ;
@@ -30,6 +35,38 @@ public class GymJournal extends AppCompatActivity {
 submit.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
+
+        File f = new File("/data/data/com.example.atlas/files/benchjournal.txt");
+        if(!(f.exists() && !f.isDirectory())) {
+            Toast.makeText(GymJournal.this, "bench file doesn't exist", Toast.LENGTH_SHORT).show();
+            write(" "," "," ","benchjournal.txt");
+           // write(" "," "," ","benchjournal.txt");
+        }
+
+        File v = new File("/data/data/com.example.atlas/files/squatjournal.txt");
+        if(!(v.exists()&& !v.isDirectory())) {
+            Toast.makeText(GymJournal.this, "squat file doesn't exist", Toast.LENGTH_SHORT).show();
+            write(" "," "," ","squatjournal.txt");
+          // write(" "," "," ","squatjournal.txt");
+        }
+
+        File l = new File("/data/data/com.example.atlas/files/pullupjournal.txt");
+        if(!(l.exists()&& !l.isDirectory())) {
+            Toast.makeText(GymJournal.this, "pull up file doesn't exist", Toast.LENGTH_SHORT).show();
+            write(" "," "," ","pullupjournal.txt");
+           // write(" "," "," ","pullupjournal.txt");
+        }
+
+        File k = new File("/data/data/com.example.atlas/files/deadliftjournal.txt");
+        if(!(k.exists()&& !k.isDirectory())) {
+            Toast.makeText(GymJournal.this, "deadlift file doesn't exist", Toast.LENGTH_SHORT).show();
+            write(" "," "," ","deadliftjournal.txt");
+            //write(" "," "," ","deadliftjournal.txt");
+        }
+
+
+
+
 
         int radioid = rgroup.getCheckedRadioButtonId();
 
@@ -137,7 +174,38 @@ home.setOnClickListener(new View.OnClickListener() {
     }
 
 
+    public void write(String sets, String reps, String max, String file){
 
+
+
+        String txt =sets+","+reps+","+max+"\n";
+        FileOutputStream fos = null;
+
+        try {
+            fos = openFileOutput(file, MODE_APPEND);
+            fos.write(txt.getBytes());
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+
+            if(fos!=null){
+
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+
+        // finish();
+
+    }
 
 
 

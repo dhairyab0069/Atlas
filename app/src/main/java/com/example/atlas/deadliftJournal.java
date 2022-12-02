@@ -3,6 +3,7 @@ package com.example.atlas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -62,6 +63,7 @@ public class deadliftJournal extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 journal();
             }
         });
@@ -77,6 +79,7 @@ public class deadliftJournal extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 home();
             }
         });
@@ -185,19 +188,32 @@ public class deadliftJournal extends AppCompatActivity {
 
                 if(deadlifttxt.isEmpty()){
 
-                    int s = deadlifttxt.size();
-                    String a = "Array is empty"+s;
-                    Toast.makeText(deadliftJournal.this, a, Toast.LENGTH_SHORT).show();
+                    deadlifttxt.add("XXXXXXXX,XXXXXXXX,XXXXXXXX");
+                    //int s = deadlifttxt.size();
+                    //String a = "Array is empty"+s+" "+line;
+                    //Toast.makeText(deadliftJournal.this, a, Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        //deadlifttxt.removeIf(n -> n.equals(" , , "));
+                        deadlifttxt.removeIf(n -> n.equals("XXXXXXXX,XXXXXXXX,XXXXXXXX"));
+                    }
+
 
                 }
             }
 
         }catch (FileNotFoundException e){
-            Toast.makeText(deadliftJournal.this, "File not found", Toast.LENGTH_SHORT).show();
-            write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
-            current();
+            Toast.makeText(deadliftJournal.this, "File not found, initialising file", Toast.LENGTH_SHORT).show();
+           // write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
+            //write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
+            finish();
+            //current();
             //finish();
-            //journal();
+            journal();
             e.printStackTrace();
         }
         catch (IOException e){
@@ -255,7 +271,7 @@ public class deadliftJournal extends AppCompatActivity {
         try {
             fos = openFileOutput(file, MODE_APPEND);
             fos.write(txt.getBytes());
-            Toast.makeText(deadliftJournal.this, "Added!", Toast.LENGTH_SHORT).show();
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
