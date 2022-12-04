@@ -22,7 +22,7 @@ public class LeaderBoards extends AppCompatActivity {
     ImageButton home,leader,dm,gear;
     TextView first, second, third, others;
     String[] names = {"Dhairya","Mehul","Sahil","Prithvi","Yegor","Andrew","Shaurya"};
-    int[] scores={97,86,99,779,80,100,94};
+    int[] scores={97,86,99,79,80,100,94};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +83,7 @@ public class LeaderBoards extends AppCompatActivity {
         int n = 7;
         for (int i = 0; i < n - 1; i++)
             for (int j = 0; j < n - i - 1; j++)
-                if (scores[j] > scores[j + 1]) {
+                if (scores[j] < scores[j + 1]) {
                     // swap arr[j+1] and arr[j]
                     int temp_s = scores[j];
                     scores[j] = scores[j + 1];
