@@ -2,24 +2,27 @@ package com.example.atlas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class LeaderBoards extends AppCompatActivity {
 
-    ImageButton home,leader,dm,gear,order;
+    ImageButton home,leader,dm,gear;
     TextView first, second, third, others;
-    String[] names;
-    int[] scores;
+    String[] names = {"Dhairya","Mehul","Sahil","Prithvi","Yegor","Andrew","Shaurya"};
+    int[] scores={97,86,99,79,80,100,94};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +31,24 @@ public class LeaderBoards extends AppCompatActivity {
         ImageButton leader =(ImageButton) findViewById(R.id.imageButton5);
         ImageButton dm =(ImageButton) findViewById(R.id.imageButton6);
         ImageButton gear =(ImageButton) findViewById(R.id.imageButton7);
-        ImageButton order =(ImageButton) findViewById(R.id.imageButton8);
 
-        ArrayList<String> Participants = new ArrayList<String>();
+        first = (TextView) findViewById(R.id.first);
+        second = (TextView) findViewById(R.id.second);
+        third = (TextView) findViewById(R.id.third);
+        others = (TextView) findViewById(R.id.others);
+        /*
 
+        File f = new File("/data/data/com.example.atlas/files/Rankings.txt");
+        if(!(f.exists() && !f.isDirectory()))
+        {
+            write_Data("Dhairya","97","Rankings.txt");
+            write_Data("Mehul","86","Rankings.txt");
+            write_Data("Sahil","99","Rankings.txt");
+            write_Data("Prithvi","79","Rankings.txt");
+            write_Data("Yegor","80","Rankings.txt");
+            write_Data("Andrew","100","Rankings.txt");
+            write_Data("Shaurya","94","Rankings.txt");
+        }
         try {
             FileInputStream fs = openFileInput("Rankings.txt");
             InputStreamReader is = new InputStreamReader(fs);
@@ -62,11 +79,11 @@ public class LeaderBoards extends AppCompatActivity {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        int n = Participants.size();
+        } */
+        int n = 7;
         for (int i = 0; i < n - 1; i++)
             for (int j = 0; j < n - i - 1; j++)
-                if (scores[j] > scores[j + 1]) {
+                if (scores[j] < scores[j + 1]) {
                     // swap arr[j+1] and arr[j]
                     int temp_s = scores[j];
                     scores[j] = scores[j + 1];
@@ -76,6 +93,8 @@ public class LeaderBoards extends AppCompatActivity {
                     names[j] = names[j + 1];
                     names[j + 1] = temp_t;
                 }
+
+
 
         first.setText("1) "+ names[0]+ ": "+ scores[0]+" /100" );
         second.setText("2) "+ names[1]+ ": "+ scores[1]+" /100" );
@@ -94,7 +113,7 @@ public class LeaderBoards extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            finish();
             }
         });
 
@@ -118,31 +137,24 @@ public class LeaderBoards extends AppCompatActivity {
 
             }
         });
-        order.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int size = Participants.size();
-                for(int i = 0;i<size/2;i++)
-                {
-                    String temp_s = names[i];
-                    names[i] = names[size-i];
-                    names[size-1] = temp_s;
 
-                    int temp_n = scores[i];
-                    scores[i] = scores[size-i];
-                    scores[size-1] = temp_n;
 
-                }
-                String Others = "";
-                for(int i = 3; i <n-1;i++)
-                {
-                    Others += names[i] + ": " + scores[i]+" /100 \n";
-                }
 
-                Others += names[n-1] + ": " + scores[n-1]+" /100 ";
-            }
-        });
+    }
 
+    public void write_Data(String name, String score, String file)
+    {
+            String FileContent = name+","+score;
+            FileOutputStream os;
+        try {
+            os = openFileOutput(file, Context.MODE_APPEND);
+            os.write(FileContent.getBytes());
+            os.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
