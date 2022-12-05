@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class LeaderBoards extends AppCompatActivity {
 
-    ImageButton home,leader,dm,gear;
+    ImageButton home,leader,Journal,data;
     TextView first, second, third, others;
     String[] names = {"Dhairya","Mehul","Sahil","Prithvi","Yegor","Andrew","Shaurya"};
     int[] scores={97,86,99,79,80,100,94};
@@ -27,10 +27,10 @@ public class LeaderBoards extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leader_boards);
-        ImageButton home =(ImageButton) findViewById(R.id.imageButton2);
-        ImageButton leader =(ImageButton) findViewById(R.id.imageButton5);
-        ImageButton dm =(ImageButton) findViewById(R.id.imageButton6);
-        ImageButton gear =(ImageButton) findViewById(R.id.imageButton7);
+         home =(ImageButton) findViewById(R.id.imageButton2);
+         leader =(ImageButton) findViewById(R.id.imageButton5);
+         Journal =(ImageButton) findViewById(R.id.imageButton6);
+         data =(ImageButton) findViewById(R.id.imageButton7);
 
         first = (TextView) findViewById(R.id.first);
         second = (TextView) findViewById(R.id.second);
@@ -124,14 +124,14 @@ public class LeaderBoards extends AppCompatActivity {
             }
         });
 
-        dm.setOnClickListener(new View.OnClickListener() {
+        Journal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
 
-        gear.setOnClickListener(new View.OnClickListener() {
+        data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
