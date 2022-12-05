@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="METRICS"
-        android:foreground="@drawable/ic_baseline_format_list_numbered_24"
+        android:foreground="@drawable/ic_baseline_analytics_24"
         style="@style/Widget.AppCompat.Button.Borderless"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
