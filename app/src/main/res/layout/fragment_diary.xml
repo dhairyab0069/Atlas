@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:text="Calories Remaining"
+            android:textColor="@android:color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textAlignment="center"
+
+                android:id="@+id/textGoal"
+                android:text="0"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:text="-"
+
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textFood"
+                android:text="0"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:textAlignment="center"
+
+                android:layout_width="match_parent"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="+"
+
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"                android:layout_weight="1"
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textExcercise"
+                android:text="0"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:textAlignment="center"
+
+                android:layout_width="match_parent"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="="
+
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"                android:layout_weight="1"
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textTotal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_dark" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textAlignment="center"
+                android:textSize="10dp"
+
+                android:text="Goal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:text=" "
+
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="10dp"
+
+                android:text="Food"
+                android:layout_weight="1"
+                android:textAlignment="center"
+
+                android:layout_width="match_parent"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text=" "
+
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textAlignment="center"
+                android:textSize="10dp"
+
+                android:text="Excercise"
+                android:layout_weight="1"
+
+                android:layout_width="match_parent"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text=" "
+
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"                android:layout_weight="1"
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textAlignment="center"
+                android:textSize="10dp"
+
+                android:text="Remaning"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:textColor="@android:color/black"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:text="Goal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:padding="10dp"
+
+                android:textStyle="bold"
+                android:textColor="#17A8EA"
+                android:id="@+id/btnAdd"
+                android:text="Add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Breakfast"
+                android:textColor="#000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:padding="10dp"
+
+                android:textStyle="bold"
+                android:textColor="#17A8EA"
+                android:id="@+id/btnAddItemBreakfast"
+                android:text="Add Item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerbreakfast_view"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#dbfffe" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:text="Lunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        <TextView
+            android:padding="10dp"
+
+            android:textStyle="bold"
+            android:textColor="#17A8EA"
+            android:id="@+id/btnAddItemLunch"
+            android:text="Add Item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerLunch_view"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#dbfffe" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:text="Dinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:padding="10dp"
+
+                android:textStyle="bold"
+                android:textColor="#17A8EA"
+                android:id="@+id/btnAddItemDinner"
+                android:text="Add Item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerDinner_view"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#dbfffe" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:text="Excercise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:padding="10dp"
+
+                android:textStyle="bold"
+                android:textColor="#17A8EA"
+                android:id="@+id/btnAddItemExcercise"
+                android:text="Add Item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerExcercise_view"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#dbfffe" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/homeActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_weight="1"
+        android:text="HOME" />
+
+
+</LinearLayout>
+</ScrollView>
