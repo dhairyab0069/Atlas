@@ -3,6 +3,7 @@ package com.example.atlas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 
@@ -65,16 +66,25 @@ public class MainActivity extends AppCompatActivity {
 
         //TextViews for gym names
         see = (TextView) findViewById(R.id.seeWho);
+        see.setTypeface(null, Typeface.BOLD);
         gym1 = (TextView) findViewById(R.id.gym1);
+        gym1.setTypeface(null, Typeface.BOLD);
         gym2 = (TextView) findViewById(R.id.gym2);
+        gym2.setTypeface(null, Typeface.BOLD);
         gym3 = (TextView) findViewById(R.id.gym3);
+        gym3.setTypeface(null, Typeface.BOLD);
         gym4 = (TextView) findViewById(R.id.gym4);
+        gym4.setTypeface(null, Typeface.BOLD);
 
         //TextViews for friends in gyms
         gym1Friends = (TextView) findViewById(R.id.friends1);
+        gym1Friends.setTypeface(null, Typeface.BOLD);
         gym2Friends = (TextView) findViewById(R.id.friends2);
+        gym2Friends.setTypeface(null, Typeface.BOLD);
         gym3Friends = (TextView) findViewById(R.id.friends3);
+        gym3Friends.setTypeface(null, Typeface.BOLD);
         gym4Friends = (TextView) findViewById(R.id.friends4);
+        gym4Friends.setTypeface(null, Typeface.BOLD);
 
 
         //Spinner set up for gym check-in
