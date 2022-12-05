@@ -7,20 +7,6 @@
     tools:context=".Friends">
 
     <TextView
-        android:id="@+id/friend2"
-        android:layout_width="138dp"
-        android:layout_height="49dp"
-        android:text="Dhairya"
-        android:textColor="#F11616"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
-
-    <TextView
         android:id="@+id/friend1"
         android:layout_width="137dp"
         android:layout_height="46dp"
@@ -60,9 +46,12 @@
 
     <Button
         android:id="@+id/mainactiviy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="67dp"
+        android:layout_height="47dp"
+        android:foreground="@drawable/home_button"
         android:text="HOME"
+        android:visibility="visible"
+        style="@style/Widget.AppCompat.Button.Borderless"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.009"
@@ -75,6 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="METRICS"
+        android:foreground="@drawable/ic_baseline_analytics_24"
+        style="@style/Widget.AppCompat.Button.Borderless"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.949"
@@ -87,6 +78,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="JOURNAL"
+        android:foreground="@drawable/ic_baseline_format_list_numbered_24"
+        style="@style/Widget.AppCompat.Button.Borderless"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.578"
@@ -99,6 +92,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LEADERBOARD"
+        android:foreground="@drawable/leaderboard"
+        style="@style/Widget.AppCompat.Button.Borderless"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
@@ -171,5 +166,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.613" />
+
+    <TextView
+        android:id="@+id/friend"
+        android:layout_width="124dp"
+        android:layout_height="43dp"
+        android:text="Dhairya"
+        android:textColor="#F44336"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.515" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
