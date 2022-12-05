@@ -79,6 +79,7 @@ public class squatAddJ extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 home();
                 //finish();
             }
@@ -88,6 +89,7 @@ public class squatAddJ extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 back();
                 //finish();
             }

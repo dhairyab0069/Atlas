@@ -77,6 +77,7 @@ public class pullupAddJ extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 home();
                 //finish();
             }
@@ -86,6 +87,7 @@ public class pullupAddJ extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 back();
                 //finish();
             }

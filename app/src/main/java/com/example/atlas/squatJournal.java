@@ -3,6 +3,7 @@ package com.example.atlas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -61,6 +63,7 @@ public class squatJournal extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 journal();
             }
         });
@@ -76,6 +79,7 @@ public class squatJournal extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 home();
             }
         });
@@ -184,15 +188,28 @@ public class squatJournal extends AppCompatActivity {
 
                 if(squattxt.isEmpty()){
 
-                    int s = squattxt.size();
-                    String a = "Array is empty"+s;
-                    Toast.makeText(squatJournal.this, a, Toast.LENGTH_SHORT).show();
+                    squattxt.add("XXXXXXXX,XXXXXXXX,XXXXXXXX");
+                    //int s = squattxt.size();
+                    //String a = "Array is empty"+s;
+                    //Toast.makeText(squatJournal.this, a, Toast.LENGTH_SHORT).show();
+
+                }else {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                       // squattxt.removeIf(m -> m.equals(" , , "));
+                        squattxt.removeIf(m -> m.equals("XXXXXXXX,XXXXXXXX,XXXXXXXX"));
+                    }
+
 
                 }
             }
 
         }catch (FileNotFoundException e){
-            Toast.makeText(squatJournal.this, "File not found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(squatJournal.this, "File not found, initialising file", Toast.LENGTH_SHORT).show();
+            //write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
+            //write("XXXXXXXX","XXXXXXXX","XXXXXXXX");
+            finish();
+           // current();
             //finish();
             journal();
             e.printStackTrace();
@@ -229,6 +246,49 @@ public class squatJournal extends AppCompatActivity {
         Intent intent = new Intent(this,squatAddJ.class);
         startActivity(intent);
 
+    }
+
+    public void current(){ //creates new intent
+
+        Intent intent = new Intent(this,benchJournal.class);
+        startActivity(intent);
+    }
+
+
+
+
+
+    public void write(String sets, String reps, String max){
+
+
+
+        String txt =sets+","+reps+","+max+"\n";
+        FileOutputStream fos = null;
+
+        try {
+            fos = openFileOutput(file, MODE_APPEND);
+            fos.write(txt.getBytes());
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+
+            if(fos!=null){
+
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+
+        // finish();
 
     }
+
 }
