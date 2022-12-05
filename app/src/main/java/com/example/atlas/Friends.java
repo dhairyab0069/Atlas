@@ -58,7 +58,7 @@ public class Friends extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home = new Intent(view.getContext(),LeaderBoards.class);
+                Intent home = new Intent(view.getContext(),MainActivity.class);
                 startActivity(home);
             }
         });
