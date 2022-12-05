@@ -196,6 +196,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(Leaderboard);
             }
         });
+        friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent friends = new Intent(view.getContext(),Friends.class);
+                startActivity(friends);
+            }
+        });
 
 
     }
@@ -210,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
 
 
