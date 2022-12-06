@@ -24,7 +24,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/amarante"
             android:gravity="center_vertical"
             android:padding="2dp"
             android:layout_marginLeft="5dp"
